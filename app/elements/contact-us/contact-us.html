@@ -1,0 +1,45 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="contact-us">
+   <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+      a {
+        color: #0645AD;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    </style>
+
+    <div class="card">
+      <h1>Contact Us</h1>
+      <p>We'd love to hear from you, email us with any questions or comments and let us know how you feel.</p>
+      <p>If you're having any trouble purchasing the book also let us know that and we can help you out.</p>
+      <p>Email: eardley.coburn@gmail.com</p>
+      <div>
+        <p>Please like us on 
+          <a target="_blank" href="https://www.facebook.com/becomingcosmo">Facebook</a> or <a target="_blank" href="https://www.instagram.com/babymascots1/">Instagram!</a></p><br>
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fbecomingcosmo%2Fposts%2F118387752156627&width=500" width="500" height="723" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'contact-us',
+
+        properties: {
+          
+        }
+      });
+    })();
+  </script>
+</dom-module>
