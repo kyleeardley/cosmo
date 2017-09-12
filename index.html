@@ -1,14 +1,4 @@
 <!doctype html>
-<!--
-@license
-Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-
 <html lang="en">
 
 <head>
@@ -45,6 +35,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="app/styles/main.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Indie+Flower" />
   <!-- endbuild-->
 
   <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
@@ -60,7 +51,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <link rel="import" href="app/elements/elements.html">
 
   <!-- For shared styles, shared-styles.html import in elements.html -->
-  <style is="custom-style" include="shared-styles">
+  <style is="custom-style" include="app/styles/shared-styles">
     /* background for toolbar when it is at its full size */
       --paper-scroll-header-panel-full-header: {
         background-image: url("../images/clouds.jpg");
@@ -97,48 +88,66 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <!-- Drawer Content -->
         <paper-menu class="app-menu" attr-for-selected="data-route" selected="[[route]]">
         <div id='menuWrapper'>
-          <a data-route="about" href="{{baseUrl}}about">
+          <a data-route="about" href="{{baseUrl}}home">
             <div class='menuItem'>
-              <div class='superText'>About</div>
+              <div class='superText'>Home</div>
               <hr class='hrLeft'>
               <hr class='hrRight'>
-              <iron-icon icon="help"></iron-icon>
-              <div class='subText'>Who I am</div>
+              <iron-icon icon="home"></iron-icon>
+              <div class='subText'>I live here</div>
             </div>
           </a>
-          <a data-route="work" href="{{baseUrl}}work">
+          <a data-route="work" href="{{baseUrl}}sample">
             <div class='menuItem'>
-              <div class='superText'>Work</div>
+              <div class='superText'>See Sample</div>
               <hr class='hrLeft'>
               <hr class='hrRight'>
-              <iron-icon icon="work"></iron-icon>
-              <div class='subText'>My Projects</div>
+              <iron-icon icon="find-in-page"></iron-icon>
+              <div class='subText'>See a few pages</div>
             </div>
           </a>
-          <a data-route="skills" href="{{baseUrl}}skills">
+          <a data-route="skills" href="{{baseUrl}}about">
               <div class='menuItem'>
-              <div class='superText'>Skills</div>
+              <div class='superText'>About Us</div>
               <hr class='hrLeft'>
               <hr class='hrRight'>
-              <iron-icon icon="build"></iron-icon>
-              <div class='subText'>Current Awesomeness</div>
+              <iron-icon icon="face"></iron-icon>
+              <div class='subText'>Let's meet</div>
             </div>
           </a>
           <a data-route="contact" href="{{baseUrl}}contact">
               <div class='menuItem'>
-              <div class='superText'>Contact</div>
+              <div class='superText'>Contact Us</div>
               <hr class='hrLeft'>
               <hr class='hrRight'>
-              <iron-icon icon="perm-identity"></iron-icon>
+              <iron-icon icon="notification:phone-in-talk"></iron-icon>
               <div class='subText'>Get In Touch</div>
             </div>
           </a>
+          <div id='bookWrapper'>
+            <a name="sample" href="[[rootPath]]sample">
+              <img src="app/images/cosmoCover.jpg">
+            </a>
+            <a name="sample" href="[[rootPath]]sample">
+              <div style='margin: 0 auto;' id="lookInside">Look Inside!</div>
+            </a>
+          </div>
+          <form id='panelPaypalButton' action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="5AHWKRGUT7WBC">
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+          </form>
         </div>
         </paper-menu>
       </paper-scroll-header-panel>
 
       <!-- Main Area -->
       <paper-scroll-header-panel main id="headerPanelMain" condenses keep-condensed-header>
+
+      <div id='header' style="height: 200px; background-image: url('app/images/Cosmo 3.jpg');">
+      <span style="position: relative; left: 20px; top: 5px; font-family: 'Indie Flower'; font-size: 51px; color: white; font-weight: 700;';">Becoming Cosmo</span>
+      </div>
         
         <!-- Main Content -->
         <div class="content">
@@ -152,12 +161,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <about-us></about-us>
             </section>
 
-            <section data-route="work">
-              <my-work></my-work>
-            </section>
-
-            <section data-route="skills">  
-              <my-skills></my-skills>
+            <section data-route="sample">  
+              <my-sample></my-sample>
             </section>
 
             <section data-route="contact">
