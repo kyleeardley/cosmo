@@ -28,7 +28,50 @@
         font-family: 'Indie Flower';
         font-size: 30px;
       }
-    </style>
+      .smallDeviceMenu {
+        min-height: 60px;
+        background: #eee;
+        margin-left: -10px;
+        margin-right: -10px;
+        margin-top: -10px;
+      }
+      .big {
+        --iron-icon-height: 32px;
+        --iron-icon-width: 8%; 
+        position: relative;
+        left: 46%;
+        top: 12px;
+      }
+      paper-listbox {
+        background: #eee;
+        padding: 0px;
+        margin-top: 22px;
+        border-top: 1px solid gray;
+      }
+      paper-item {
+        background: #eee;
+        border-bottom: 1px solid gray;
+      }
+      paper-item a {
+        font-family: 'Indie Flower';
+        text-decoration: none;
+        margin: 0 auto;
+        font-size: 22px;
+      }
+
+    </style>  
+
+    <div class='smallDeviceMenu' on-tap='_toggleMenu'>
+      <iron-icon icon="menu" class='big'></iron-icon>
+      <iron-collapse id='collapse'>
+        <paper-listbox on-tap='close' class="dropdown-content">
+          <paper-item class='hov'><a data-route="home" href="{{baseUrl}}home">Home</a></paper-item>
+          <paper-item> <a data-route="sample" href="{{baseUrl}}sample">Sample</a></paper-item>
+          <paper-item><a data-route="about" href="{{baseUrl}}about">About</a></paper-item>
+          <paper-item><a data-route="contact" href="{{baseUrl}}contact">Contact</a></paper-item>
+        </paper-listbox>
+      </iron-collapse>
+    </div> 
 
     <div class="card">
       <h1>About Us</h1>
@@ -46,6 +89,12 @@
         is: 'about-us',
 
         properties: {
+        },
+        _toggleMenu: function() {
+          this.$.collapse.toggle();
+        },
+        close: function() {
+          this.$.collapse.opened = false;
         }
       });
     })();
