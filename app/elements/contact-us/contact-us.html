@@ -55,6 +55,12 @@
         margin: 0 auto;
         font-size: 22px;
       }
+      #smaller {
+        display: none;
+      }
+      #larger {
+        display: block;
+      }
        @media only screen and (max-width: 601px) {
           h1 {
               text-align: center;
@@ -74,6 +80,14 @@
             bottom: 5px;
             left: 23%;
           }
+           #smaller {
+            display: block;
+          }
+          #larger {
+            display: none;
+          }
+      }
+      }
       }
 
     </style>  
@@ -98,7 +112,8 @@
       <div>
         <p>Please like us on 
           <a target="_blank" href="https://www.facebook.com/becomingcosmo">Facebook</a> or <a target="_blank" href="https://www.instagram.com/babymascots1/">Instagram!</a></p><br>
-        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fbecomingcosmo%2Fposts%2F118387752156627&width=500" width="500" height="723" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+        <iframe id='larger' src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fbecomingcosmo%2Fposts%2F118387752156627&width=500" width="500" height="723" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+        <iframe id='smaller' src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fbecomingcosmo%2Fposts%2F118387752156627&width=300" width="300" height="434" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
       </div>
     </div>
   </template>
