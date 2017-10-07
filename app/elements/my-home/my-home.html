@@ -72,6 +72,18 @@
         margin: 0 auto;
         font-size: 22px;
       }
+      .banner {
+        height: 100px;
+        background: red;
+        color: white;
+        font-family: 'Indie Flower';
+        font-size: 56px;
+        width: calc(100% + 90px);
+        position: relative;
+        right: 45px;
+        top: -10px;
+        text-align: center;
+      }
       @media only screen and (max-width: 1500px) {
         form {
             position: relative;
@@ -90,8 +102,17 @@
         form {
             position: absolute;
             left: 61px;
-            top: 587px;
+            top: 687px;
           }
+           .banner {
+              font-size: 40px;
+              height: 65px;              
+            }
+      }
+      @media only screen and (max-width: 850px) {
+        .banner {
+          font-size: 30px;
+        }
       }
        @media only screen and (max-width: 727px) {
         form {
@@ -126,10 +147,15 @@
             top: 5px;
             left: 22%;
           }
+          .banner {
+          font-size: 20px;
+          height: 45px;
+        }
       }
 
     </style>  
 
+    <div class='banner'>Free Shipping for Homecoming!!</div>
     <div class='smallDeviceMenu' on-tap='_toggleMenu'>
       <iron-icon icon="menu" class='big'></iron-icon>
       <iron-collapse id='collapse'>
